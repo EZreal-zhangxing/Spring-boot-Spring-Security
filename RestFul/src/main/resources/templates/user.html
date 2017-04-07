@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1px">
+		<tr>
+			<td>ID</td>
+			<td>username</td>
+			<td>password</td>
+			<td>enable</td>
+		</tr>
+		<tr th:each="user:${users}">
+			<td th:text="${user.id}">ID1</td>
+			<td th:text="${user.username}">username1</td>
+			<td th:text="${user.password}">password1</td>
+			<td th:text="${user.enable}">enable1</td>
+		</tr>
+	</table>
+	<span th:text="${#dates.format(#dates.createNow(),'yyyy-MM-dd HH:mm:ss')}">时间</span>
+	<span th:text="${#httpSession.getAttribute('userid')}">session对象</span>
+</body>
+</html>

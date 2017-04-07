@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE
+mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="/">
+	<select id="selectUser" parameterType="java.lang.String" resultType="pojo.user">
+		SELECT * FROM ZX_USER WHERE username=#{username}
+	</select>
+	<select id="selectAll" resultType="pojo.user">
+		SELECT * FROM ZX_USER 
+	</select>
+	<select id="selectRole" parameterType="java.lang.Integer" resultType="pojo.role">
+		SELECT * FROM ZX_ROLE WHERE userid=#{userid} 
+	</select>
+</mapper>
